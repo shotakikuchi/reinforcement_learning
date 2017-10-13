@@ -1,6 +1,7 @@
 import numpy as np
 import sys
 from normal_dist_random import NormalDistRandom
+np.random.seed(111)
 
 
 class Bandit:
