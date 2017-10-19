@@ -19,10 +19,11 @@ class GreedyMethod:
            そうでない場合、最も価値が高いと推定される行動を選ぶ。
         """
         if np.random.random() < self.epsilon:
-            return np.random.rand()
+            return np.random.choice(np.arange(self.size))
         else:
             max_value = np.max(self.values)
-            return self.values.index(max_value)
+            i, = np.where(self.values == max_value)
+            return i[0]
 
     def reflect(self, selected, value):
         """得られた報酬を反映し、学習する。
